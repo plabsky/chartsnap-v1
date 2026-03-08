@@ -202,9 +202,10 @@ export async function POST(req: Request) {
           content: [
             { type: "input_text", text: userPrompt },
             {
-              type: "input_image",
-              image_url: imageDataUrl,
-            },
+  type: "input_image",
+  image_url: imageDataUrl,
+  detail: "high",
+},
           ],
         },
       ],
