@@ -48,18 +48,19 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#05070b] text-white">
       <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6">
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 shadow-lg">
-          <p className="text-sm text-zinc-400">ChartSnap v1.0</p>
-          <h1 className="mt-2 text-3xl font-bold">허용된 사용자 로그인</h1>
-          <p className="mt-3 text-sm leading-6 text-zinc-400">
-            등록된 이메일로만 로그인할 수 있습니다. 이메일로 받은 링크를 눌러
-            접속하세요.
+        <div className="rounded-[28px] border border-emerald-500/30 bg-[#070b11] p-7 shadow-[0_0_40px_rgba(34,197,94,0.08)]">
+          <p className="text-sm font-medium text-emerald-400">ChartSnap v1.0</p>
+          <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-emerald-400">
+            Crypto Scalping
+          </h1>
+          <p className="mt-3 text-sm leading-7 text-zinc-400">
+            허용된 이메일만 로그인할 수 있습니다. 메일로 받은 링크를 눌러 접속하세요.
           </p>
 
           <div className="mt-6">
-            <label className="mb-2 block text-sm font-medium text-zinc-300">
+            <label className="mb-2 block text-sm font-semibold text-emerald-300">
               이메일
             </label>
             <input
@@ -67,7 +68,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-white outline-none placeholder:text-zinc-500 focus:border-zinc-600"
+              className="w-full rounded-2xl border border-zinc-800 bg-[#0a0f16] px-4 py-3 text-white outline-none placeholder:text-zinc-500 transition focus:border-emerald-500"
             />
           </div>
 
@@ -75,19 +76,19 @@ export default function LoginPage() {
             type="button"
             onClick={handleLogin}
             disabled={loading}
-            className="mt-6 w-full rounded-xl bg-white px-4 py-3 font-semibold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:bg-zinc-400"
+            className="mt-6 w-full rounded-2xl bg-emerald-500 px-4 py-4 text-lg font-bold text-black shadow-[0_0_25px_rgba(34,197,94,0.22)] transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:bg-emerald-300"
           >
             {loading ? "전송 중..." : "로그인 링크 받기"}
           </button>
 
           {message ? (
-            <div className="mt-4 rounded-xl border border-green-900 bg-green-950/40 p-4 text-sm text-green-300">
+            <div className="mt-4 rounded-2xl border border-emerald-900 bg-emerald-950/30 p-4 text-sm text-emerald-300">
               {message}
             </div>
           ) : null}
 
           {error ? (
-            <div className="mt-4 rounded-xl border border-red-900 bg-red-950/40 p-4 text-sm text-red-300">
+            <div className="mt-4 rounded-2xl border border-red-900 bg-red-950/40 p-4 text-sm text-red-300">
               {error}
             </div>
           ) : null}
