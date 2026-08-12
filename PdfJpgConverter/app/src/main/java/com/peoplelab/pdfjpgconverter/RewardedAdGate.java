@@ -54,19 +54,14 @@ public final class RewardedAdGate {
                         if (pendingActivity != null) {
                             Toast.makeText(
                                     pendingActivity,
-                                    "광고를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
+                                    "테스트 광고를 불러오지 못해 바로 변환합니다.",
                                     Toast.LENGTH_SHORT
                             ).show();
 
-                            if (BuildConfig.DEBUG && pendingAction != null) {
-                                Runnable action = pendingAction;
-                                pendingActivity = null;
-                                pendingAction = null;
-                                action.run();
-                            } else {
-                                pendingActivity = null;
-                                pendingAction = null;
-                            }
+                            Runnable action = pendingAction;
+                            pendingActivity = null;
+                            pendingAction = null;
+                            if (action != null) action.run();
                         }
                     }
                 }
