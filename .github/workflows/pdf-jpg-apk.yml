@@ -1,7 +1,7 @@
-name: Build PDF JPG APK
+name: Build PDF Tool APK
 on:
   push:
-    branches: [pdf-jpg-apk-build]
+    branches: [pdf-jpg-apk-build, pdf-jpg-v0.2]
   workflow_dispatch:
 jobs:
   build:
@@ -23,5 +23,5 @@ jobs:
         run: gradle assembleDebug --stacktrace
       - uses: actions/upload-artifact@v4
         with:
-          name: PdfJpgConverter-debug-apk
+          name: PdfTool-v0.2-debug-apk
           path: PdfJpgConverter/app/build/outputs/apk/debug/app-debug.apk
