@@ -150,7 +150,8 @@ public final class PdfCompressor {
     private static Bitmap render(PdfRenderer.Page page, int maxDimension) {
         int sourceW = page.getWidth();
         int sourceH = page.getHeight();
-        float scale = Math.min(1f, maxDimension / (float) Math.max(sourceW, sourceH));
+        float scale = maxDimension / (float) Math.max(sourceW, sourceH);
+        scale = Math.max(0.5f, Math.min(3.0f, scale));
         int width = Math.max(1, Math.round(sourceW * scale));
         int height = Math.max(1, Math.round(sourceH * scale));
 
